@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+.signup{
+    position:absolute;
+    right:100px;
+    top:10px;
+    color:wheat;
+}
+body{
+    color:black;
+}

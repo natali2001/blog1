@@ -2,11 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\views\\users",
+    "\\app\\controllers\\concerns",
+    "\\app\\views\\sessions",
+    "\\app\\views\\signup",
     "\\db\\migrate",
     "\\test",
+    "\\test\\integration",
     "\\test\\models"
   ],
-  "SelectedNode": "\\test\\models\\user_test.rb",
+  "SelectedNode": "\\test\\integration\\users_login_test.rb",
   "PreviewInSolutionExplorer": false
 }
