@@ -5,7 +5,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
    def setup
-    @user = users(:michael)
+    @user = users(:one)
   end
 
   test "login with invalid information" do
@@ -17,6 +17,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     get root_path
     assert flash.empty?
   end
+
   test "login with valid information followed by logout" do
     get login_path
     post login_path, session: { email: @user.email, password: 'password' }
@@ -36,12 +37,14 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", logout_path,      count: 0
     assert_select "a[href=?]", user_path(@user), count: 0
   end
+
 test "login with remembering" do
 
     log_in_as(@user, remember_me: '1')
      assert_equal FILL_IN, assigns(:user).FILL_IN
   end
-   test "login without remembering" do
+
+test "login without remembering" do
     log_in_as(@user, remember_me: '0')
     assert_nil cookies['remember_token']
   end
