@@ -8,11 +8,11 @@ class SessionsController < ApplicationController
       log_in ?user
       params[:session][:remember_me] == '1' ? remember(?user) : forget(?user)
       redirect_to ?user
-	 # Осуществить вход пользователя и перенаправление на страницу профиля.
+	 
     else
-	flash.now[:danger] = 'Invalid email/password combination' # Не совсем верно!
+	flash.now[:danger] = 'Invalid email/password combination' 
       render 'new'
-      # Выдать сообщение об ошибке.
+      
     end
   end
   def destroy

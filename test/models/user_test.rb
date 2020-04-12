@@ -15,22 +15,22 @@ class UserTest < ActiveSupport::TestCase
 
   test "name should be present" do
  @user.name="     "
- assern_not @user.valid?
+ assert_not @user.valid?
  end 
 
  test "email should be present" do
  @user.email="     "
- assern_not @user.valid?
+ assert_not @user.valid?
  end 
 
 test "name should not be too long" do
 @user.name = "a" * 51
-assern_not @user.valid?
+assert_not @user.valid?
 end
 
 test "email should not be too long" do
 @user.email = "a" * 244 + "@example.com"
-assern_not @user.valid?
+assert_not @user.valid?
 end
 
 test "email validation should accept valid addresses " do
@@ -63,7 +63,7 @@ end
  assert_not @user.valid?
  end
 test "password should have a minimum length" do
-@user.password = @user.password_confirmation = "a" * 6
+@user.password = @user.password_confirmation = "a" * 5
 assert_not @user.valid?
 end
 
