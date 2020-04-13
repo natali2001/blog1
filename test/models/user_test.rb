@@ -44,7 +44,7 @@ end
 
 test "email validation should reject invalid addresses " do
 invalid addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
-                     first.last@foo.jp alice+bob@baz.cn]
+                      alice+bob@baz.cn]
 invalid_addresses.each do |invalid_address|
    @user.email = invalid_address
    assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
